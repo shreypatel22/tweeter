@@ -14,3 +14,8 @@ span {
   padding: 0 1.5em;
 }
 
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
