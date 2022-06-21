@@ -1,0 +1,36 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#tweet-text {
+  display: block;
+  width: 100%;
+  border: 0px;
+  border-bottom: 0.5em solid rgb(255, 0, 0);
+}
+
+.new-tweet {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+}
+
+button {
+  background-color: darkblue;
+  font-family: 'Bungee', cursive;
+}
+
+.counter {
+  font-family: 'Bungee', cursive;
+}
+
+.container {
+  background-color: aliceblue;
+}
