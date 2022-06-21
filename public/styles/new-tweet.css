@@ -1,14 +1,8 @@
-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 #tweet-text {
-  display: block;
   width: 100%;
   border: 0px;
-  border-bottom: 0.5em solid rgb(255, 0, 0);
+  border-bottom: 5px solid orangered;
+  background-color: transparent;
 }
 
 .new-tweet {
@@ -19,18 +13,21 @@ form {
 .bottom {
   display: flex;
   justify-content: space-between;
-  margin-top: 2%;
+  margin-top: 2%;  
 }
 
 button {
-  background-color: darkblue;
+  background-color: #4056A1;
   font-family: 'Bungee', cursive;
+  color: white;
+  border: none;
 }
 
 .counter {
   font-family: 'Bungee', cursive;
 }
 
-.container {
-  background-color: aliceblue;
+.counter-red {
+  color: red;
 }
+
