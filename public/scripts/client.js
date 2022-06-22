@@ -88,19 +88,23 @@ $form.on('submit', (event) => {
   
   const $tweetData = $('#tweet-text');
 
-  // const $tweetText = $tweetData.val();
+  const $tweetText = $tweetData.val();
   // console.log($tweetText);
-
-  $.ajax({
-    type: "POST",
-    url: '/tweets',
-    // Use $form.serialize here instead of $tweetData since if you have more than one text area in the form you can get all with form
-    // with $tweetData you could only get the one you selected and that defeats the whole serization process
-    data: $form.serialize(),
-    success: () => {console.log($form.serialize())}    
-  });
-
-})
+  if ($tweetText.length > 140) {
+    alert('Too long')
+  } else if (!$tweetText) {
+    alert('please enter a tweet')
+  } else {
+    $.ajax({
+      type: "POST",
+      url: '/tweets',
+      // Use $form.serialize here instead of $tweetData since if you have more than one text area in the form you can get all with form
+      // with $tweetData you could only get the one you selected and that defeats the whole serization process
+      data: $form.serialize(),
+      success: () => {console.log($form.serialize())}    
+    });
+  }
+});
 
 const loadTweets = () => {
   $.ajax('/tweets', {method: 'GET'})
