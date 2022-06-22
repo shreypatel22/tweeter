@@ -96,3 +96,17 @@ article > p {
   margin-left: 15px;
   /* align-self: center; */
 }
+
+.new-tweet > div {
+  display: none;
+  display: flex;
+  width: 75%;
+  justify-content: space-evenly;
+  color: red;
+  border: 5px solid red;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  align-items: center;
+  height: 60px;
+  
+}

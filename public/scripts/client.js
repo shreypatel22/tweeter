@@ -17,8 +17,12 @@ const convertToSafe = string => {
   return div.innerHTML;
 }
 
+// Hide tweet error initially
+const $tweetError = $('.error')
+$tweetError.hide();
 // Load initial tweets
 loadTweets();
+
 
 
 const renderTweets = tweets => {
@@ -61,17 +65,20 @@ const $form = $('form');
 $form.on('submit', (event) => {
   // you need the parameter event in the callback so you can use preventDefault which stops the page from redirecting
   event.preventDefault();
-
   
   const $tweetData = $('#tweet-text');
-
   const $tweetText = $tweetData.val();
+  // const $tweetError = $('.error')
+  const $tweetErrorText = $tweetError.find('#tweet-error-text')
   // console.log($tweetText);
   if ($tweetText.length > 140) {
-    alert('Too long')
+    $tweetError.show();
+    $tweetErrorText.text('Tweet too long, please keep to 140 characters or less!')
   } else if (!$tweetText) {
-    alert('please enter a tweet')
+    $tweetError.show();
+    $tweetErrorText.text('Please enter something in the textarea in order to tweet!')
   } else {
+    $tweetError.hide();
     $.ajax({
       type: "POST",
       url: '/tweets',
