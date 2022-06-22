@@ -4,49 +4,22 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Test / driver code (temporary). Eventually will get this from the server.
-// const tweetData = {
-//   "user": {
-//     "name": "Newton",
-//     "avatars": "https://i.imgur.com/73hZDYK.png",
-//     "handle": "@SirIsaacTest"
-//     },
-//   "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//   "created_at": 1461116232227
-// }
+const loadTweets = () => {
+  $.ajax('/tweets', {method: 'GET'})
+    .then(tweets => {
+      renderTweets(tweets);
+    })
+}
 
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
+loadTweets();
+
 
 const renderTweets = tweets => {
+  $('#tweets-container').empty();
   for (const tweet in tweets) {
     // console.log(createTweetElement(tweets[tweet]))
     let $tweet = createTweetElement(tweets[tweet]);
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
   }
   return
 }
@@ -76,10 +49,6 @@ const createTweetElement = (tweetData) => {
   return $tweet
 }
 
-// Render the tweets
-// renderTweets(data);
-
-
 const $form = $('form');
 $form.on('submit', (event) => {
   // you need the parameter event in the callback so you can use preventDefault which stops the page from redirecting
@@ -100,19 +69,18 @@ $form.on('submit', (event) => {
       url: '/tweets',
       // Use $form.serialize here instead of $tweetData since if you have more than one text area in the form you can get all with form
       // with $tweetData you could only get the one you selected and that defeats the whole serization process
-      data: $form.serialize(),
-      success: () => {console.log($form.serialize())}    
+      data: $form.serialize(),      
+      success: () => {
+        loadTweets();
+        $tweetData.val('');
+        $('textarea').parent().find('output').text(140);
+      }
     });
   }
 });
 
-const loadTweets = () => {
-  $.ajax('/tweets', {method: 'GET'})
-    .then(tweets => {
-      renderTweets(tweets);
-    })
-}
 
-loadTweets();
+
+
 
 
