@@ -21,4 +21,4 @@ $(document).ready( () => {
       counterValue.removeClass('counter-red')
     }
   })
-});  
+});

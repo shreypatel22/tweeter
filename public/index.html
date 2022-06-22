@@ -31,7 +31,7 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="left">tweeter</span>
-      <span class="right"> <div class="nav icon"> <b>Write</b> a new tweet </div> <i class="fa-solid fa-angles-down"></i></span>      
+      <span class="nav-right"> <div class="nav icon"> <b>Write</b> a new tweet </div> <i class="fa-solid fa-angles-down"></i></span>      
     </nav>
 
     <header>
@@ -45,7 +45,7 @@
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main id="container">
       <section class="new-tweet">
         <!-- <h2>Compose Tweet</h2> -->
         <form action="/tweets" method="POST">
@@ -57,6 +57,24 @@
           </div>
         </form>
       </section>
+      <article>
+        <header class="tweet-header">
+          <div>
+            <i class="fa-solid fa-user"></i>
+            <p class="person-name">Newton</p>
+          </div>
+          <div>@SirIssac</div>
+        </header>
+        <p>If I have seen further it is by standing on the shoulders of giants</p>
+        <footer class="tweet-footer">
+          <div >10 days ago</div>
+          <div class="tweet-footer-right">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
     </main>
   </body>
 </html>

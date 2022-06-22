@@ -1,4 +1,4 @@
-/*
+/* 
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
@@ -25,12 +25,12 @@ body {
 main {
   width: 90%;
   background-color: white;
-  display: flex;
+  /* display: flex; */
+  /* flex-direction: row; */
   justify-content: start;
   margin: 0 auto;
 }
 
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+ * Additional CSS can be defined below or in other CSS files, as per instructions */
