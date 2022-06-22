@@ -11,10 +11,12 @@ const loadTweets = () => {
     })
 }
 
+// Load initial tweets
 loadTweets();
 
 
 const renderTweets = tweets => {
+  // Empty intial tweets to avoid duplication since it will be loaded from the for loop
   $('#tweets-container').empty();
   for (const tweet in tweets) {
     // console.log(createTweetElement(tweets[tweet]))
@@ -71,8 +73,11 @@ $form.on('submit', (event) => {
       // with $tweetData you could only get the one you selected and that defeats the whole serization process
       data: $form.serialize(),      
       success: () => {
+        // Load loads -> now adds the new tweet before loading
         loadTweets();
+        // Empty the text area
         $tweetData.val('');
+        // Reset the counter
         $('textarea').parent().find('output').text(140);
       }
     });
