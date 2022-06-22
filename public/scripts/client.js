@@ -11,6 +11,12 @@ const loadTweets = () => {
     })
 }
 
+const convertToSafe = string => {
+  const div = document.createElement('div');
+  div.appendChild(document.createTextNode(string));
+  return div.innerHTML;
+}
+
 // Load initial tweets
 loadTweets();
 
@@ -37,7 +43,7 @@ const createTweetElement = (tweetData) => {
       </div>
       <div>${tweetData.user.handle}</div>
     </header>
-    <p>${tweetData.content.text}</p>
+    <p>${convertToSafe(tweetData.content.text)}</p>
     <footer class="tweet-footer">
       <div >${timeago.format(tweetData.created_at)}</div>
       <div class="tweet-footer-right">
