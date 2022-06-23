@@ -40,7 +40,7 @@ const renderTweets = tweets => {
 const createTweetElement = (tweetData) => {
   let $tweet = `  
   <article>
-    <header class="tweet-header">
+    <header>
       <div>
       <img src=${tweetData.user.avatars} alt="profile icon">
         <p class="person-name">${tweetData.user.name}</p>
@@ -72,13 +72,18 @@ $form.on('submit', (event) => {
   const $tweetErrorText = $tweetError.find('#tweet-error-text')
   // console.log($tweetText);
   if ($tweetText.length > 140) {
-    $tweetError.show();
+    // $tweetError.show();
+    $tweetError.slideUp();
+    $tweetError.slideDown();
+
     $tweetErrorText.text('Tweet too long, please keep to 140 characters or less!')
   } else if (!$tweetText) {
-    $tweetError.show();
+    // $tweetError.show();
+    $tweetError.slideUp();
+    $tweetError.slideDown();
     $tweetErrorText.text('Please enter something in the textarea in order to tweet!')
   } else {
-    $tweetError.hide();
+    $tweetError.slideUp();
     $.ajax({
       type: "POST",
       url: '/tweets',
@@ -96,9 +101,3 @@ $form.on('submit', (event) => {
     });
   }
 });
-
-
-
-
-
-

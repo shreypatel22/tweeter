@@ -23,3 +23,16 @@ span {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+nav span i {
+  color: red;
+  animation: bounce 1.5s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(12px); }
+  100% { transform: translateY(0); }
+}
+
+

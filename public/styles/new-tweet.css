@@ -43,10 +43,10 @@ article:hover {
   box-shadow: 5px 5px;
 }
 
-.tweet-footer {
+article footer {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
   margin-bottom: 10px;
 }
@@ -55,7 +55,7 @@ article:hover {
   margin: 0 5px;
 }
 
-.tweet-header {
+article header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,7 +65,7 @@ article:hover {
   margin-top: 15px;
 }
 
-.tweet-header > div{
+article header > div{
   display: flex;
   align-items: center;
   /* justify-content: space-between; */
@@ -73,22 +73,22 @@ article:hover {
 
 article > p {
   margin: 0 auto;
-  width: 90%;
-  border-bottom: 5px solid black;
-  padding: 35px;
+  width: 95%;
+  border-bottom: 5px solid rgb(43, 43, 43);
+  padding: 1.75em 0.5em;
   margin-bottom: 15px;
 }
 
 .fa-flag:hover {
-  color: aqua;
+  color: rgb(5, 103, 231);
 }
 
 .fa-retweet:hover {
-  color: aqua;
+  color: rgb(5, 103, 231);
 }
 
 .fa-heart:hover {
-  color: aqua;
+  color: rgb(5, 103, 231);
 }
 
 .person-name {
@@ -98,9 +98,9 @@ article > p {
 }
 
 .new-tweet > div {
-  display: none;
+  /* display: none; */
   display: flex;
-  width: 75%;
+  width: 60ch;
   justify-content: space-evenly;
   color: red;
   border: 5px solid red;
