@@ -7,7 +7,7 @@ nav {
   align-items: center;
   z-index: 9;
   position: fixed;
-  background-color: rgb(28, 185, 224);
+  background-color: #00A8CC;
 }
 
 span {
@@ -37,7 +37,7 @@ nav span i {
 
 @media only screen and (min-width: 1024px) {
   nav {
-    background-color: #4056A1;
+    background-color: #0C7B93;
   }
 }
 

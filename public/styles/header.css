@@ -5,7 +5,7 @@ body > header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(28, 185, 224);
+  background-color: #00A8CC;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   padding-top: 120px;
 }
