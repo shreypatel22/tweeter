@@ -4,39 +4,42 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Load tweets onto screen
 const loadTweets = () => {
   $.ajax('/tweets', {method: 'GET'})
     .then(tweets => {
       renderTweets(tweets);
-    })
-}
+    });
+};
 
+// Turn input from user to safe strings
 const convertToSafe = string => {
   const div = document.createElement('div');
   div.appendChild(document.createTextNode(string));
   return div.innerHTML;
-}
+};
 
-// Hide tweet error initially
-const $tweetError = $('.error')
+// Hide error for tweets initially
+const $tweetError = $('.error');
 $tweetError.hide();
+
 // Load initial tweets
 loadTweets();
 
 
-
+// Add new tweets to dom
 const renderTweets = tweets => {
   // Empty intial tweets to avoid duplication since it will be loaded from the for loop
   $('#tweets-container').empty();
   for (const tweet in tweets) {
-    // console.log(createTweetElement(tweets[tweet]))
     let $tweet = createTweetElement(tweets[tweet]);
     $('#tweets-container').prepend($tweet);
   }
-  return
-}
+  return;
+};
 
 
+// Create html for new tweets
 const createTweetElement = (tweetData) => {
   let $tweet = `  
   <article>
@@ -57,40 +60,39 @@ const createTweetElement = (tweetData) => {
       </div>
     </footer>
   </article>
-  `
-  return $tweet
-}
+  `;
+  return $tweet;
+};
 
 const $form = $('form');
+
+
 $form.on('submit', (event) => {
-  // you need the parameter event in the callback so you can use preventDefault which stops the page from redirecting
+  // Stops the page from redirecting when user clicks submit
   event.preventDefault();
   
   const $tweetData = $('#tweet-text');
   const $tweetText = $tweetData.val();
-
-  const $tweetErrorText = $tweetError.find('#tweet-error-text')
+  const $tweetErrorText = $tweetError.find('#tweet-error-text');
 
   if ($tweetText.length > 140) {
-
+    // Error animation for too long input text
     $tweetError.slideUp();
     $tweetError.slideDown();
-
-    $tweetErrorText.text('Please keep to 140 characters or less!')
+    $tweetErrorText.text('Please keep to 140 characters or less!');
   } else if (!$tweetText) {
-
+    // Error animation for no input text
     $tweetError.slideUp();
     $tweetError.slideDown();
-    $tweetErrorText.text('Please enter something in order to tweet!')
+    $tweetErrorText.text('Please enter something in order to tweet!');
   } else {
+    // Slide up error upon succeful tweet
     $tweetError.slideUp();
     $.ajax({
       type: "POST",
       url: '/tweets',
-   
-      data: $form.serialize(),      
+      data: $form.serialize(),
       success: () => {
-        // Load loads -> now adds the new tweet before loading
         loadTweets();
         // Empty the text area
         $tweetData.val('');
