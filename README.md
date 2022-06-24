@@ -16,3 +16,17 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+### Desktop Layout
+![Desktop Layout](https://github.com/shreypatel22/tweeter/blob/master/docs/Desktop%20Layout.png?raw=true)
+
+### Desktop Layout Error
+![Desktop Layout Error](https://github.com/shreypatel22/tweeter/blob/master/docs/Desktop%20Layout%20Error.png?raw=true)
+
+### Tablet Layout
+![Tablet Layout](https://github.com/shreypatel22/tweeter/blob/master/docs/Tablet%20Layout.png?raw=true)
+
+### Tablet Layout Error
+![Tablet Layout Error](https://github.com/shreypatel22/tweeter/blob/master/docs/Desktop%20Layout%20Error.png?raw=true)
