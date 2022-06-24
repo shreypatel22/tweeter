@@ -37,11 +37,11 @@ main {
 @media only screen and (min-width: 1024px) {
 
   body {
-    display: flex;
+    display: flex;    
   }
 
   main {
-    margin: 300px 50px 50px;
+    margin: 180px 50px 50px;
   }
 
 }

@@ -76,12 +76,12 @@ $form.on('submit', (event) => {
     $tweetError.slideUp();
     $tweetError.slideDown();
 
-    $tweetErrorText.text('Tweet too long, please keep to 140 characters or less!')
+    $tweetErrorText.text('Please keep to 140 characters or less!')
   } else if (!$tweetText) {
     // $tweetError.show();
     $tweetError.slideUp();
     $tweetError.slideDown();
-    $tweetErrorText.text('Please enter something in the textarea in order to tweet!')
+    $tweetErrorText.text('Please enter something in order to tweet!')
   } else {
     $tweetError.slideUp();
     $.ajax({
