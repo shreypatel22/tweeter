@@ -29,4 +29,4 @@ This repository is the starter code for the project: Students will fork and clon
 ![Tablet Layout](https://github.com/shreypatel22/tweeter/blob/master/docs/Tablet%20Layout.png?raw=true)
 
 ### Tablet Layout Error
-![Tablet Layout Error](https://github.com/shreypatel22/tweeter/blob/master/docs/Desktop%20Layout%20Error.png?raw=true)
+![Tablet Layout Error](https://github.com/shreypatel22/tweeter/blob/master/docs/Tablet%20Layout%20Error.png?raw=true)
