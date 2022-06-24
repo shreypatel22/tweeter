@@ -27,17 +27,14 @@ body {
 main {
   width: 90%;
   background-color: #27496D;
-  /* display: flex; */
-  /* flex-direction: row; */
   justify-content: start;
   margin: 0 auto;
-  /* margin-top: 500px; */
 }
 
 @media only screen and (min-width: 1024px) {
 
   body {
-    display: flex;    
+    display: flex;
   }
 
   main {

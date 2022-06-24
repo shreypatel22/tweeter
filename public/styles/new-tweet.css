@@ -1,13 +1,15 @@
-#tweet-text {
+textarea {
   width: 100%;
   border: 0px;
   border-bottom: 5px solid #00A8CC;
   background-color: transparent;
   color: white;
+  font-size: 115%;
 }
 
-#tweet-text::placeholder {
+textarea::placeholder {
   color: white;
+  font-size: 115%;
 }
 
 .new-tweet {
@@ -18,7 +20,7 @@
 .bottom {
   display: flex;
   justify-content: space-between;
-  margin-top: 2%;  
+  margin-top: 2%;
 }
 
 button {
@@ -28,6 +30,7 @@ button {
   border: black 2pm solid;
   padding: 8px;
   margin-left: 3px;
+  border-radius: 6px;
 }
 
 button:hover {
@@ -47,6 +50,7 @@ article {
   border: 5px solid black;
   margin-top: 30px;
   margin-bottom: 20px;
+  border-radius: 15px;
 }
 
 article:hover {
@@ -85,7 +89,7 @@ article > p {
   border-bottom: 5px solid rgb(43, 43, 43);
   padding: 1.75em 0.5em;
   margin-bottom: 15px;
-  overflow: hidden;
+  word-break: break-all;
 }
 
 .fa-flag:hover {
@@ -100,21 +104,38 @@ article > p {
   color: #00A8CC;
 }
 
-.person-name {
-  margin-left: 15px;
-}
-
 .new-tweet > div {
   display: flex;
-  width: 100%;
   justify-content: space-evenly;
-  color: red;
-  border: 5px solid red;
-  margin: 0 auto;
+  color: #E43F5A;
+  border: 10px solid #E43F5A;
   margin-bottom: 25px;
   align-items: center;
-  height: 60px;
+  font-weight: 900;
+  font-size: 150%;
+  text-align: center;
+  border-radius: 50px;
   
+}
+
+.person-name {
+  margin-left: 15px;
+  font-weight: 500;
+}
+
+.tweeter-handle {
+  color: lightgrey;
+  font-weight: 600;
+  font-size: 115%;
+}
+
+footer {
+  font-size: 18px;
+}
+
+article header img {
+  filter: saturate(500%) contrast(800%) brightness(500%) 
+      invert(80%) sepia(50%) hue-rotate(120deg); 
 }
 
 /* @media only screen and (min-width: 1024px) {

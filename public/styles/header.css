@@ -8,6 +8,7 @@ body > header {
   background-color: #00A8CC;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   padding-top: 120px;
+  border-radius: 25px;
 }
 
 @media only screen and (min-width: 1024px) {

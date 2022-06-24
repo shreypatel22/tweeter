@@ -32,7 +32,7 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span class="left">tweeter</span>
+      <span class="nav-left">tweeter</span>
       <span class="nav-right"> 
         <div class="nav icon"> <b>Write</b> a new tweet </div> 
         <i class="fa-solid fa-angles-down"></i>
@@ -52,14 +52,14 @@
     <!-- Page-specific (main) content here -->
     <main id="container">
       <section class="new-tweet">
+        <!-- Error -->
         <div class="error">
           <i class="fa-solid fa-circle-exclamation"></i>
           <p id="tweet-error-text">Test Text</p>
           <i class="fa-solid fa-circle-exclamation"></i>
         </div>
-        <!-- <h2>Compose Tweet</h2> -->
+        <!-- Input TweetBox -->
         <form action="/tweets" method="POST">
-          <!-- <label for="tweet-text" class="inputText">What are you humming about?</label> -->
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="bottom">
             <button type="submit">Tweet</button>
